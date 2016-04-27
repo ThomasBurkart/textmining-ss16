@@ -17,8 +17,6 @@ public class Speaker {
    private Work work;
    private List<Monologue> monologues = new ArrayList<>();
 
-   
-   
     public List<Monologue> getMonologues() {
         return monologues;
     }
@@ -57,12 +55,10 @@ public class Speaker {
         return sum;
     }
 
-    
     @Override
     public String toString() {
         return name + "(" + work + ')';
     }
-    
     
     public String getAllText() {
         StringBuilder res = new StringBuilder();
@@ -71,9 +67,4 @@ public class Speaker {
         }
         return res.toString();
     }
-
-   
-    
-    
-    
 }

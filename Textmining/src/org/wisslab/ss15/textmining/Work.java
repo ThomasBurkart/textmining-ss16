@@ -27,8 +27,6 @@ public class Work {
     public AllWorks getAllWorks() {
         return allWorks;
     }
-    
-    
 
     public String getFilename() {
         return filename;
@@ -38,10 +36,6 @@ public class Work {
         this.filename = filename;
     }
     
-    
-    
-    
-
     public void sortSpeakersByMonologues() {
         Collections.sort(speakers, 
                 (speaker1, speaker2) -> speaker1.getNumberOfMonologues() - speaker2.getNumberOfMonologues()
@@ -66,9 +60,6 @@ public class Work {
         return monologues;
     }
     
-    
-    
-    
     public String getAllText() {
         StringBuilder res = new StringBuilder();
         for (Monologue m: monologues) {
@@ -81,7 +72,4 @@ public class Work {
     public String toString() {
         return filename;
     }
-    
-    
-
 }

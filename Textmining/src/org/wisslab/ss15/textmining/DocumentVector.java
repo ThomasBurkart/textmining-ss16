@@ -18,13 +18,13 @@ public class DocumentVector {
 
     private VectorSpace vectorSpace;
     private String id;
+    private double norm = -1;
+    private Map<String, Long> tfMap = new HashMap<>();
 
     public DocumentVector(VectorSpace vectorSpace, String id) {
         this.vectorSpace = vectorSpace;
         this.id = id;
     }
-
-    private Map<String, Long> tfMap = new HashMap<>();
 
     public void addToken(String token) {
         long old = tfMap.getOrDefault(token, 0l);
@@ -45,8 +45,6 @@ public class DocumentVector {
         }
         return getTf(dimension) * Math.log(((double) vectorSpace.getNumberOfDocuments()) / (vectorSpace.getDF(dimension)));
     }
-
-    private double norm = -1;
 
     public double getTfIdfNormSqr() {
         if (norm > -0.5) {

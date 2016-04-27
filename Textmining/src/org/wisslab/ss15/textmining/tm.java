@@ -18,7 +18,7 @@ public class tm {
         VectorSpace vs = new VectorSpace();
         
         if (args.length==0) {
-            works = sp.readFiles("C:\\Users\\kai\\Downloads\\ShakespearePlaysPlus\\TXT");
+            works = sp.readFiles("C:\\HdM\\6. Semester\\Textmining\\Textmining\\src\\TXT");
         } else {
             works = sp.readFiles(args[0]);
         }
@@ -29,25 +29,20 @@ public class tm {
         }
         
         for (Speaker speaker: works.getAllSpeakers()) {
-                System.out.print(speaker + " ----> ");
-                double maxSim = 0;
-                Speaker maxSpeaker = null;
-                for (Speaker s2: works.getAllSpeakers()) {
-                    // Kein Vergleich mit sich selbst!
-                    if (speaker.equals(s2)) continue;
-                    double sim = vs.getCosineSimilarity(speaker.toString(), s2.toString());
-                    if (sim>maxSim) {
-                        maxSim = sim;
-                        maxSpeaker = s2;
-                    }
+            System.out.print(speaker + " ----> ");
+            double maxSim = 0;
+            Speaker maxSpeaker = null;
+            for (Speaker s2: works.getAllSpeakers()) {
+                // Kein Vergleich mit sich selbst!
+                if (speaker.equals(s2)) continue;
+                double sim = vs.getCosineSimilarity(speaker.toString(), s2.toString());
+                if (sim>maxSim) {
+                    maxSim = sim;
+                    maxSpeaker = s2;
                 }
-                System.out.println("Most similar: " + maxSpeaker + " ("+maxSim+")");
-                System.out.println("-------------------------------");
             }
-        
-    }
-
-    
-    
-    
+            System.out.println("Most similar: " + maxSpeaker + " ("+maxSim+")");
+            System.out.println("-------------------------------");
+        }   
+    }    
 }

@@ -34,8 +34,6 @@ public class Monologue {
     public void setScene(Scene scene) {
         this.scene = scene;
     }
-
-    
     
     public Speaker getSpeaker() {
         return speaker;
@@ -56,10 +54,5 @@ public class Monologue {
     @Override
     public String toString() {
         return "Monologue{" + "speaker=" + speaker + ", scene=" + scene + ", text=" + text + "}\n";
-    }
-    
-    
-
-        
-    
+    }    
 }

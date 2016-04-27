@@ -20,8 +20,6 @@ public class Act {
         this.number = number;
     }
     
-    
-
     public Work getWork() {
         return work;
     }
