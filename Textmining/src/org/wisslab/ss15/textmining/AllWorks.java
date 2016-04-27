@@ -6,7 +6,6 @@
 package org.wisslab.ss15.textmining;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -34,7 +33,9 @@ public class AllWorks {
         for (Work w: works) {
             res.addAll(w.getSpeakers());
         }
-        Collections.sort(res, (speaker1, speaker2) -> speaker1.getNumberOfMonologues()-speaker2.getNumberOfMonologues());
+        Collections.sort(res, (speaker1, speaker2) -> speaker2.getNumberOfMonologues()-speaker1.getNumberOfMonologues());
         return res;
     }
+    
+
 }
